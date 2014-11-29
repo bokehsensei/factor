@@ -1,0 +1,6 @@
+Factor is an integer factorization algorithm I wrote for the fun of it.
+This may very well be a re-invention of a well-known algorithm,
+but I could not find something quite so similar.
+
+In a way, the closest algorithm is the Fermat's factorization method (http://en.wikipedia.org/wiki/Fermat%27s_factorization_method).
+
