@@ -5,7 +5,7 @@ but I could not find something quite so similar.
 In a way, the closest algorithm is the Fermat's factorization method (http://en.wikipedia.org/wiki/Fermat%27s_factorization_method).
 
 Factor splits a number N into 2 factors, if it is a composite, or (1, N) if it is prime.
-Time: its worst case is O(n) for a prime number of n bits.
+Time: its worst case is O(2^n) for a prime number with n bits.
 Space: O(1)
 
 all_factors returns the distribution of prime factors in N, by apply factor 'recursively' with a stack.

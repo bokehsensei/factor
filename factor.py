@@ -1,22 +1,26 @@
 from math import sqrt, floor, ceil
 
-def factor(n):
+def factor(N):
 	'''
-		return a tuple (a,b) such that n = a*b
+		returns a tuple (a,b) such that N = a*b
 
-		Note that factor only splits n in 2 factors, whichever are closer to sqrt(n)
+		Note that factor only splits N in 2 factors, whichever are closer to sqrt(N)
+		If N is prime, factor(N) will therefore return (1,N).
+
+		Space cost: O(1).
+		Time cost: worst case (when N is prime) is O(2^n) where n is N's length in bits.
 
 		for example:
 			factor(8) => (2,4)
 			factor(39) => (3,13)
 			factor(257) => (1,257) 257 is prime
 	'''
-	estimate = sqrt(n)
+	estimate = sqrt(N)
 	a = floor(estimate)
 	b = ceil(estimate)
 	ab = a*b
 	while True:
-		delta = n - ab
+		delta = N - ab
 		if delta == 0:
 			break
 		if delta > 0:
@@ -31,14 +35,19 @@ def factor(n):
 	
 	return a,b
 
-def all_factors(n):
+def all_factors(N):
 	'''
-		return a dictionary of prime factors in n with their respective exponents
+		returns a dictionary of prime factors in n with their respective exponents
 		example:
 			all_factors( 51 ) => { 3: 1, 17: 1 }
+
+		Costs:
+
+		Space: O(1)
+		Time: worst case (prime) is O(2^n) where n is the bit length of the input.
 	'''
 	factors = {}
-	stack = [n]
+	stack = [N]
 	while stack:
 		a,b = factor(stack.pop())
 		if a == 1:
